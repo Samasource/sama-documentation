@@ -1,19 +1,23 @@
+name: Upload Documents
+
+on:
+  push:
+    branches: ["main"]
+
 jobs:
   deploy:
-    name: Upload to Amazon S3
+    name: Deploy
     runs-on: ubuntu-latest
-    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
-    permissions:
-      id-token: write
-      contents: read
+    environment: production
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          role-to-assume: arn:aws:sts::596059236576:assumed-role/AWSReservedSSO_DocumentationAccess_a2521d19b025dd9c/cviquez@samasource.org
-          aws-region: us-east-1
-      - name: Copy files to the test website with the AWS CLI
-        run: |
-          aws s3 sync . 3://sama-documentation-assets
+          role-skip-session-tagging: true
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
