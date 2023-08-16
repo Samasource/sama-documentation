@@ -20,3 +20,4 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: arn:aws:sts::596059236576:assumed-role/AWSReservedSSO_DocumentationAccess_a2521d19b025dd9c/cviquez@samasource.org
+          aws-region: us-east-1
