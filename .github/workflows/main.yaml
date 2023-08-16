@@ -18,3 +18,4 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-skip-session-tagging: true
+          aws-region: ${{ secrets.AWS_REGION }}
