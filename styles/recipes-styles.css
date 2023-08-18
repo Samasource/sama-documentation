@@ -1,0 +1,180 @@
+/*  
+        Reference: https://david-kerwick.github.io/2012-05-03-google-code-prettify-add-theme/
+        * Derived from einaros&#39;s Sons of Obsidian theme at  
+        * http://studiostyl.es/schemes/son-of-obsidian by  
+        * Alex Ford of CodeTunnel:  
+        * http://CodeTunnel.com/blog/post/71/google-code-prettify-obsidian-theme  
+        */
+
+.kwd {
+    color: #93c763;
+}
+
+.com {
+    color: #66747b;
+}
+
+.typ {
+    color: #678cb1;
+}
+
+.lit {
+    color: #219F94;
+}
+
+.tag {
+    color: #8ac763;
+}
+
+.atn {
+    color: #e0e2e4;
+}
+
+.dec {
+    color: purple;
+}
+
+pre.prettyprint {
+    border: 0 solid #888;
+}
+
+ol.linenums {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.prettyprint {
+    background: #efefef;
+}
+
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L4,
+li.L5,
+li.L6,
+li.L7,
+li.L8,
+li.L9 {
+    color: #adb4bb !important;
+    list-style-type: decimal;
+    width: 1000px;
+}
+
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {
+    background: #eaeaea;
+}
+
+.str,
+.atv {
+    color: #AC0087;
+}
+
+.pun,
+.pln {
+    color: #219F94;
+}
+
+@media print {
+    .com {
+        color: #600;
+        font-style: italic;
+    }
+
+    .typ {
+        color: #404;
+        font-weight: 700;
+    }
+
+    .lit {
+        color: #044;
+    }
+
+    .pun {
+        color: #440;
+    }
+
+    .pln {
+        color: #000;
+    }
+
+    .atn {
+        color: #404;
+    }
+
+    .str,
+    .atv {
+        color: #060;
+    }
+
+    .kwd,
+    .tag {
+        color: #006;
+        font-weight: 700;
+    }
+}
+
+pre {
+    outline: 1px solid #ccc;
+    padding: 5px;
+    margin: 15px;
+    color: #440;
+    background: #efefef;
+    color: #353535;
+    background: hsla(0, 0%, 78%, .3) !important;
+    border: 1px solid #c4c4c4;
+    border-radius: 2px;
+}
+
+
+.string {
+    color: #AC0087;
+}
+
+.number {
+    color: #FF8000;
+}
+
+.boolean {
+    color: #0b57c7;
+}
+
+.null {
+    color: #0b57c7;
+}
+
+.pun {
+    color: #219F94
+}
+
+.key {
+    color: #1A65CF;
+}
+
+.scroll-container {
+    max-height: 100vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    padding-bottom: 100%;
+}
+
+.copy-alert {
+    position: absolute;
+    top: -1.5rem;
+    padding: 0.5rem;
+    transition-property: opacity;
+    transition-duration: 1500ms;
+    opacity: 0;
+}
+
+.copy-alert.show {
+    opacity: 1;
+}
