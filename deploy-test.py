@@ -1,5 +1,5 @@
 def holaMundo():
-    print("Hola mundo")
+    print("Hola lola")
 
 
 holaMundo()
