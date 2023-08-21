@@ -26,7 +26,7 @@ var i_s_creation_data = {
     "data": {
         ...
         "image Original url": "https://sama-documentation-assets.s3.amazonaws.com/doc-tutorial/Assets/IMG_2299.JPG",
-        "image Original file name": "IMG_2299.JPG",
+        "image Original file name": "testing-name-demo.jpg",
         "image Size": "1452322",
         "image Height": "2448",
         "image Width": "3264",
