@@ -23,4 +23,4 @@ jobs:
           aws-region: us-east-1
       - name: Copy files to the production website with the AWS CLI
         run: |
-          aws s3 sync . s3://sama-documentation-assets
+          aws s3 sync . s3://sama-documentation-assets/GitHub
