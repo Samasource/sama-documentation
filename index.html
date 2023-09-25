@@ -1,12 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Example</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React CDN</title>
+    <script src="./libraries/sama-react@17/react.min.js"></script>
+    <script src="./libraries/sama-react@17/react-dom.min.js"></script>
+    <script src='./libraries/sama-babel@6/babel.js'></script>
+    <script src="./recipes/data/i-s-delivery-data.js"></script>
+    <script src="./recipes/data/i-s-creation-data.js"></script>
+    <script src="./recipes/data/s-s-delivery-data.js"></script>
+    <script src="./recipes/data/s-s-creation-data.js"></script>
+    <script src="./recipes/data/i-s-video-delivery-data.js"></script>
+    <script src="./recipes/data/i-s-video-creation-data.js"></script>
+    <script src="./recipes/data/3d-delivery-cuboid-data.js"></script>
+    <script src="./recipes/data/3d-fused-annotation-delivery-data.js"></script>
+    <script src="./recipes/data/3d-orthographic-shape-delivery-data.js"></script>
+    <script src="./libraries/sama-bootstrap/bootstrap.bundle.min.js"></script>
+    <link href="./libraries/sama-bootstrap/bootstrap-recipes.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/recipes-styles.css">
+
 </head>
 
 <body>
-    <p>This is an example of a simple HTML page with one paragraph.</p>
+    <div id="root-all-recipes" class="bootstrap-recipes" data-bs-theme="light"></div>
+    <script src="./recipes/all-recipes-index.js" type="text/babel"></script>
 </body>
 
 </html>

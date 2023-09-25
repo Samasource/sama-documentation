@@ -46,21 +46,26 @@ const prettier = (code) => {
         {lines}
     </ol>
 }
-const Card = ({ title, description, imgSrc, data, setCurrentData }) => {
 
+const SemanticSegmentationRecipes = () => {
+    const cardsData = [
+        s_s_creation_data,
+        s_s_delivery_data
+    ]
+    React.useEffect(() => {
+        snippets = []
+    }
+    ), [currentData];
+    const [currentData] = React.useState({})
+    const renderCards = cardsData.map((data, index) => <RecipeCard key={index} title={data.title} description={data.description} data={data} modalId={`modal${index}`} />)
     return (
-        <div className="col-sm-6 mb-3 mb-sm-0 d-flex justify-content-center">
-            <div className="card" style={{ width: "18rem" }}>
-                <img src={imgSrc}
-                    className="card-img-top" />
-                <div className="card-body d-flex flex-column">
-                    <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{description}</p>
-                    <button className="btn btn-primary mt-auto" data-bs-target="#custom-modal" data-bs-toggle="modal" onClick={() => setCurrentData(data)}>Open
-                        Recipe</button>
-                </div>
+        <div className="container overflow-hidden" >
+            <div class="row gy-5">
+                {renderCards}
             </div>
-        </div >)
+
+        </div>
+    )
 }
 
 const CodeBlock = ({ title, code, id }) => {
@@ -152,25 +157,26 @@ const FullJson = ({ currentData }) => {
 
 
 
-const Modal = ({ currentData }) => {
+const Modal = ({ currentData, modalId }) => {
+
     const showCopyAlert = () => {
         const alert = document.getElementById("copy-alert-msg");
-        alert.classList.toggle("show");
         setTimeout(() => alert.classList.toggle("show"), 2000);
     };
 
     const copyFunction = () => {
+        console.log(currentData.fullJson)
         navigator.clipboard.writeText(JSON.stringify(JSON.parse(currentData.fullJson)));
         showCopyAlert();
     };
     return (
-        <div className="modal fade" id="custom-modal" aria-hidden="true" aria-labelledby="custom-modal-label" style={{ zIndex: 9999, background: 'rgba(0, 0, 0, 0.5)' }}
+        <div className="modal fade" id={`${modalId}`} aria-hidden="true" aria-labelledby="custom-modal-label" style={{ zIndex: 9999, background: 'rgba(0, 0, 0, 0.5)' }}
             tabIndex="-1">
             <div className="modal-dialog modal-xl modal-dialog-scrollable">
                 <div className="modal-content">
-                    <div className="modal-header">
-                        <h1 className="modal-title fs-5" id="custom-modal-label">{currentData.title}</h1>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div className="modal-header" data-bs-theme="dark">
+                        <h1 className="modal-title" id="custom-modal-label">{currentData.title}</h1>
+                        <button type="button" class="btn-close btn-close-white" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div className="modal-body">
                         <div className="row">
@@ -203,12 +209,8 @@ const Modal = ({ currentData }) => {
                                                     <button type="button" id="sama-copy-button"
                                                         className="btn btn-light bg-white border-0 p-3 mb-2 bg-white"
                                                         onClick={copyFunction}>
-                                                        <svg width="25px" height="25px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                                                            <g id="icomoon-ignore">
-                                                            </g>
-                                                            <path d="M27.845 7.385l-5.384-5.384h-11.845v4.307h-6.461v23.69h17.229v-4.307h6.461v-18.306zM22.461 3.524l3.861 3.861h-3.861v-3.861zM5.232 28.922v-21.537h9.692v5.384h5.384v16.153h-15.076zM16 7.831l3.861 3.861h-3.861v-3.861zM21.384 24.615v-12.922l-5.384-5.384h-4.307v-3.231h9.692v5.384h5.384v16.153h-5.384z" fill="#000000">
-
-                                                            </path>
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 1H4.5C3.4 1 2.5 1.9 2.5 3V17H4.5V3H16.5V1ZM19.5 5H8.5C7.4 5 6.5 5.9 6.5 7V21C6.5 22.1 7.4 23 8.5 23H19.5C20.6 23 21.5 22.1 21.5 21V7C21.5 5.9 20.6 5 19.5 5ZM8.5 21H19.5V7H8.5V21Z" fill="#765DD8" />
                                                         </svg>
                                                         &nbsp;
                                                     </button>
@@ -229,36 +231,29 @@ const Modal = ({ currentData }) => {
                 </div>
             </div>
         </div>
+
     )
 }
 
+// Maneja lo que esta dentro del card
 
-const SemanticSegmentationRecipes = () => {
-    const cardsData = [
-        s_s_creation_data,
-        s_s_delivery_data,
-    ]
-
-    React.useEffect(() => {
-        snippets = []
-    }
-    ), [currentData];
-
-
-
-    const [currentData, setCurrentData] = React.useState({})
-
-    const dataChange = (data) => {
-        setCurrentData(data);
-    }
-
-    const renderCards = cardsData.map((data, index) => <Card key={index} title={data.title} description={data.description} imgSrc={data.cardImg} data={data} setCurrentData={setCurrentData} />)
+const RecipeCard = ({ data, modalId }) => {
     return (
-        <div className="container overflow-hidden">
-            <div className="row gy-5 ">
-                {renderCards}
+        <div class="col-sm-6 mb-3 mb-sm-0 d-flex justify-content-center">
+            <div className="card d-flex flex-row" style={{ width: "30rem" }}>
+                <svg style={{ marginLeft: "15px", marginTop: "20px" }} width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.8182 0C16.4502 1.15145e-05 58.2331 0 58.2331 0C58.2331 0 55.2721 16.8374 43.4281 17.1675C31.5841 17.4976 1.31616 17.1675 1.31616 17.1675C1.31616 17.1675 11.1862 -1.15145e-05 13.8182 0Z" fill="#5A42D0" />
+                    <path d="M12.7188 40.9375C15.3964 40.9375 57.904 40.9375 57.904 40.9375C57.904 40.9375 54.8916 57.6322 42.8423 57.9595C30.7929 58.2869 0 57.9596 0 57.9596C0 57.9596 10.0412 40.9375 12.7188 40.9375Z" fill="#5A42D0" />
+                    <path d="M45.3736 20.4692C39.2171 20.4692 0.657829 20.4692 0.657829 20.4692C0.657829 20.4692 1.30589 37.6367 16.2111 37.6367C31.1164 37.6367 56.0665 37.6367 57.6867 37.6368C59.3068 37.6368 51.5301 20.4692 45.3736 20.4692Z" fill="#5A42D0" />
+                </svg>
+                <div className="card-body d-flex flex-column">
+                    <h5 className="card-title">{data.title}</h5>
+                    <p className="card-text">{data.description}</p>
+                    <button className="btn btn-primary mt-auto" data-bs-target={`#${modalId}`} data-bs-toggle="modal" onClick={() => { }}>Open
+                        Recipe</button>
+                    <Modal currentData={data} modalId={modalId} />
+                </div>
             </div>
-            <Modal currentData={currentData} />
         </div>)
 }
 
