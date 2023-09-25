@@ -1,5 +1,4 @@
 var i_s_video_creation_data = {
-    cardImg: "https://sama-documentation-assets.s3.amazonaws.com/Recipes/recipes-header-pink.png",
     title: "Video Instance Segmentation JSON-creation",
     description: "Structure used to create video tasks in the Sama Platform.",
     steps: [

@@ -1,3 +1,5 @@
+
+
 const syntaxHighlight = (json) => {
     if (!json) return ""; //no JSON from response
 
@@ -45,10 +47,9 @@ const prettier = (code) => {
     </ol>
 }
 
-const InstanceSegmentationRecipes = () => {
+const Cuboid3DRecipe = () => {
     const cardsData = [
-        i_s_creation_data,
-        i_s_delivery_data
+        cuboid_3D
     ]
     React.useEffect(() => {
         snippets = []
@@ -255,5 +256,4 @@ const RecipeCard = ({ data, modalId }) => {
 }
 
 
-
-ReactDOM.render(<InstanceSegmentationRecipes />, document.querySelector('#root-instance-segmentation-recipes'));
+ReactDOM.render(<Cuboid3DRecipe />, document.querySelector('#root-cuboid-3d-recipes'));

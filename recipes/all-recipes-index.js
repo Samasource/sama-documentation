@@ -1,3 +1,5 @@
+
+
 const syntaxHighlight = (json) => {
     if (!json) return ""; //no JSON from response
 
@@ -45,10 +47,17 @@ const prettier = (code) => {
     </ol>
 }
 
-const InstanceSegmentationRecipes = () => {
+const Recipes = () => {
     const cardsData = [
         i_s_creation_data,
-        i_s_delivery_data
+        i_s_delivery_data,
+        s_s_creation_data,
+        s_s_delivery_data,
+        i_s_video_creation_data,
+        i_s_video_delivery_data,
+        cuboid_3D,
+        orthographic_shapes,
+        fused_annotation
     ]
     React.useEffect(() => {
         snippets = []
@@ -233,16 +242,18 @@ const Modal = ({ currentData, modalId }) => {
     )
 }
 
-
 const RecipeCard = ({ data, modalId }) => {
     return (
         <div class="col-sm-6 mb-3 mb-sm-0 d-flex justify-content-center">
-            <div className="card d-flex flex-row" style={{ width: "30rem" }}>
-                <svg style={{ marginLeft: "15px", marginTop: "20px" }} width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.8182 0C16.4502 1.15145e-05 58.2331 0 58.2331 0C58.2331 0 55.2721 16.8374 43.4281 17.1675C31.5841 17.4976 1.31616 17.1675 1.31616 17.1675C1.31616 17.1675 11.1862 -1.15145e-05 13.8182 0Z" fill="#5A42D0" />
-                    <path d="M12.7188 40.9375C15.3964 40.9375 57.904 40.9375 57.904 40.9375C57.904 40.9375 54.8916 57.6322 42.8423 57.9595C30.7929 58.2869 0 57.9596 0 57.9596C0 57.9596 10.0412 40.9375 12.7188 40.9375Z" fill="#5A42D0" />
-                    <path d="M45.3736 20.4692C39.2171 20.4692 0.657829 20.4692 0.657829 20.4692C0.657829 20.4692 1.30589 37.6367 16.2111 37.6367C31.1164 37.6367 56.0665 37.6367 57.6867 37.6368C59.3068 37.6368 51.5301 20.4692 45.3736 20.4692Z" fill="#5A42D0" />
-                </svg>
+            <div className="card d-flex flex-row" style={{ width: "20rem" }}>
+                <div className="flex-column">
+                    <svg style={{ marginLeft: "15px", marginTop: "20px" }} width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.8182 0C16.4502 1.15145e-05 58.2331 0 58.2331 0C58.2331 0 55.2721 16.8374 43.4281 17.1675C31.5841 17.4976 1.31616 17.1675 1.31616 17.1675C1.31616 17.1675 11.1862 -1.15145e-05 13.8182 0Z" fill="#5A42D0" />
+                        <path d="M12.7188 40.9375C15.3964 40.9375 57.904 40.9375 57.904 40.9375C57.904 40.9375 54.8916 57.6322 42.8423 57.9595C30.7929 58.2869 0 57.9596 0 57.9596C0 57.9596 10.0412 40.9375 12.7188 40.9375Z" fill="#5A42D0" />
+                        <path d="M45.3736 20.4692C39.2171 20.4692 0.657829 20.4692 0.657829 20.4692C0.657829 20.4692 1.30589 37.6367 16.2111 37.6367C31.1164 37.6367 56.0665 37.6367 57.6867 37.6368C59.3068 37.6368 51.5301 20.4692 45.3736 20.4692Z" fill="#5A42D0" />
+                    </svg>
+                </div>
+
                 <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{data.title}</h5>
                     <p className="card-text">{data.description}</p>
@@ -255,5 +266,4 @@ const RecipeCard = ({ data, modalId }) => {
 }
 
 
-
-ReactDOM.render(<InstanceSegmentationRecipes />, document.querySelector('#root-instance-segmentation-recipes'));
+ReactDOM.render(<Recipes />, document.querySelector('#root-all-recipes'));

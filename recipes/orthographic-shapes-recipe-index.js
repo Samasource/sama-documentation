@@ -1,3 +1,5 @@
+
+
 const syntaxHighlight = (json) => {
     if (!json) return ""; //no JSON from response
 
@@ -45,10 +47,9 @@ const prettier = (code) => {
     </ol>
 }
 
-const InstanceSegmentationRecipes = () => {
+const OrthographicShapesRecipes = () => {
     const cardsData = [
-        i_s_creation_data,
-        i_s_delivery_data
+        orthographic_shapes
     ]
     React.useEffect(() => {
         snippets = []
@@ -255,5 +256,4 @@ const RecipeCard = ({ data, modalId }) => {
 }
 
 
-
-ReactDOM.render(<InstanceSegmentationRecipes />, document.querySelector('#root-instance-segmentation-recipes'));
+ReactDOM.render(<OrthographicShapesRecipes />, document.querySelector('#root-orthographic-shape-recipes'));

@@ -1,5 +1,4 @@
 var s_s_creation_data = {
-    cardImg: "https://sama-documentation-assets.s3.amazonaws.com/Recipes/recipes-header-pink.png",
     title: "Semantic Segmentation JSON-creation",
     description: "This JSON corresponds to the creation format, which means that this is the structure used to create tasks in the Sama Platform",
     steps: [

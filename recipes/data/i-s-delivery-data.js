@@ -1,5 +1,4 @@
 var i_s_delivery_data = {
-    cardImg: "https://sama-documentation-assets.s3.amazonaws.com/Recipes/recipes-header-gree.png",
     title: "Instance Segmentation JSON-delivery",
     description: "Structure containing all details related to the project, submission ans answers.",
     steps: [
