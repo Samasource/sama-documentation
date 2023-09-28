@@ -49,7 +49,9 @@ const prettier = (code) => {
 
 const Cuboid3DRecipe = () => {
     const cardsData = [
-        cuboid_3D
+        cuboid_3D,
+        orthographic_shapes,
+        fused_annotation
     ]
     React.useEffect(() => {
         snippets = []
@@ -238,7 +240,7 @@ const Modal = ({ currentData, modalId }) => {
 const RecipeCard = ({ data, modalId }) => {
     return (
         <div class="col-sm-6 mb-3 mb-sm-0 d-flex justify-content-center">
-            <div className="card d-flex flex-row" style={{ width: "30rem" }}>
+            <div className="card d-flex flex-row" style={{ width: "20rem" }}>
                 <div className="flex-column">
                     <svg style={{ marginLeft: "15px", marginTop: "20px" }} width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.8184 -3.05176e-05C16.4504 -1.90031e-05 58.2334 -3.05176e-05 58.2334 -3.05176e-05C58.2334 -3.05176e-05 55.2724 16.8374 43.4284 17.1675C31.5844 17.4976 1.31641 17.1675 1.31641 17.1675C1.31641 17.1675 11.1864 -4.20321e-05 13.8184 -3.05176e-05Z" fill="#1DB55A" />

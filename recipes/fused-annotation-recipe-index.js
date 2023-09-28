@@ -49,6 +49,8 @@ const prettier = (code) => {
 
 const FusedAnnotationRecipes = () => {
     const cardsData = [
+        cuboid_3D,
+        orthographic_shapes,
         fused_annotation
     ]
     React.useEffect(() => {
@@ -237,7 +239,7 @@ const Modal = ({ currentData, modalId }) => {
 const RecipeCard = ({ data, modalId }) => {
     return (
         <div class="col-sm-6 mb-3 mb-sm-0 d-flex justify-content-center">
-            <div className="card d-flex flex-row" style={{ width: "30rem" }}>
+            <div className="card d-flex flex-row" style={{ width: "20rem" }}>
                 <div className="flex-column">
                     <svg style={{ marginLeft: "15px", marginTop: "20px" }} width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M13.8184 -3.05176e-05C16.4504 -1.90031e-05 58.2334 -3.05176e-05 58.2334 -3.05176e-05C58.2334 -3.05176e-05 55.2724 16.8374 43.4284 17.1675C31.5844 17.4976 1.31641 17.1675 1.31641 17.1675C1.31641 17.1675 11.1864 -4.20321e-05 13.8184 -3.05176e-05Z" fill="#1DB55A" />
@@ -245,6 +247,7 @@ const RecipeCard = ({ data, modalId }) => {
                         <path d="M45.3731 20.4694C39.2166 20.4694 0.657341 20.4694 0.657341 20.4694C0.657341 20.4694 1.3054 37.6369 16.2106 37.6369C31.1159 37.6369 56.066 37.6369 57.6862 37.6369C59.3063 37.6369 51.5296 20.4694 45.3731 20.4694Z" fill="#1DB55A" />
                     </svg>
                 </div>
+
                 <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{data.title}</h5>
                     <p className="card-text">{data.description}</p>
@@ -257,4 +260,4 @@ const RecipeCard = ({ data, modalId }) => {
 }
 
 
-ReactDOM.render(<FusedAnnotationRecipes />, document.querySelector('#root-fused-annotation-recipes'));
+ReactDOM.render(<Recipes />, document.querySelector('#root-fused-annotation-recipes'));
