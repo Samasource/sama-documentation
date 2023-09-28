@@ -260,4 +260,4 @@ const RecipeCard = ({ data, modalId }) => {
 }
 
 
-ReactDOM.render(<Recipes />, document.querySelector('#root-fused-annotation-recipes'));
+ReactDOM.render(<FusedAnnotationRecipes />, document.querySelector('#root-fused-annotation-recipes'));
