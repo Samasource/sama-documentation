@@ -49,8 +49,8 @@ const prettier = (code) => {
 
 const FusedAnnotationRecipes = () => {
     const cardsData = [
-        {},
-        {},
+        null,
+        null,
         fused_annotation
     ]
     React.useEffect(() => {
@@ -58,7 +58,7 @@ const FusedAnnotationRecipes = () => {
     }
     ), [currentData];
     const [currentData] = React.useState({})
-    const renderCards = cardsData.map((data, index) => <RecipeCard key={index} title={data.title} description={data.description} data={data} modalId={`modal${index}`} />)
+    const renderCards = cardsData.map((data, index) => !!data ? <RecipeCard key={index} title={data.title} description={data.description} data={data} modalId={`modal${index}`} /> : null)
     return (
         <div className="container overflow-hidden" >
             <div class="row gy-5">

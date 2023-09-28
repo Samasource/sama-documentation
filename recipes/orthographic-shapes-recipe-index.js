@@ -49,16 +49,16 @@ const prettier = (code) => {
 
 const OrthographicShapesRecipes = () => {
     const cardsData = [
-        {},
+        null,
         orthographic_shapes,
-        {}
+        null
     ]
     React.useEffect(() => {
         snippets = []
     }
     ), [currentData];
     const [currentData] = React.useState({})
-    const renderCards = cardsData.map((data, index) => <RecipeCard key={index} title={data.title} description={data.description} data={data} modalId={`modal${index}`} />)
+    const renderCards = cardsData.map((data, index) => !!data ? <RecipeCard key={index} title={data.title} description={data.description} data={data} modalId={`modal${index}`} /> : null)
     return (
         <div className="container overflow-hidden" >
             <div class="row gy-5">
@@ -256,7 +256,10 @@ const RecipeCard = ({ data, modalId }) => {
                     <Modal currentData={data} modalId={modalId} />
                 </div>
             </div>
-        </div>)
+        </div>
+    )
+
+
 }
 
 
