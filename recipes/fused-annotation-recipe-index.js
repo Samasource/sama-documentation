@@ -49,8 +49,8 @@ const prettier = (code) => {
 
 const FusedAnnotationRecipes = () => {
     const cardsData = [
-        cuboid_3D,
-        orthographic_shapes,
+        {},
+        {},
         fused_annotation
     ]
     React.useEffect(() => {

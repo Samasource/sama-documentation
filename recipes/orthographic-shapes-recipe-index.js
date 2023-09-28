@@ -49,9 +49,9 @@ const prettier = (code) => {
 
 const OrthographicShapesRecipes = () => {
     const cardsData = [
-        cuboid_3D,
+        {},
         orthographic_shapes,
-        fused_annotation
+        {}
     ]
     React.useEffect(() => {
         snippets = []

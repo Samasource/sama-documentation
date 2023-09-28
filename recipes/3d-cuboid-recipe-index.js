@@ -50,8 +50,8 @@ const prettier = (code) => {
 const Cuboid3DRecipe = () => {
     const cardsData = [
         cuboid_3D,
-        orthographic_shapes,
-        fused_annotation
+        {},
+        {}
     ]
     React.useEffect(() => {
         snippets = []
